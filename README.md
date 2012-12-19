@@ -1,3 +1,3 @@
 AOJ
 ===
-AOJ assingments.
+AOJ assignments.
