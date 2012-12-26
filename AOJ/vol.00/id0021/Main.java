@@ -36,5 +36,6 @@ public class Main {
 
 	public static boolean isParallel(double ex1,double ey1,double ex2,double ey2){
 			//2つのベクトルが平行である条件
+		return false;
 	}
 }
