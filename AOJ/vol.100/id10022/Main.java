@@ -1,12 +1,11 @@
 package id10022;
 
-/**
- * 大文字小文字を区別しない！
- */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -24,27 +23,36 @@ public class Main {
 		String[] w;
 		try {
 			br = new BufferedReader(new FileReader("sampleData/id10022D.txt"));
+			//br = new BufferedReader(new InputStreamReader(System.in));
 			while(!(str=br.readLine()).equals("END_OF_TEXT")){
-				list.add(str);		//1行ごとにlistに追加
+				list.add(str);				//1行ごとにlistに追加
 			}
 		}catch(IOException e){
 			e.printStackTrace();
 		}
 
-		for(int i=0; i<list.size(); i++){	//すべての単語をwordsに追加
+		for(int i=0; i<list.size(); i++){	//すべての単語を小文字にしてwordsに追加
 			w = list.get(i).split(" ");
 			for(String s : w){
-				words.add(s);
+				words.add("<" + s.toLowerCase() + ">");
 			}
 		}
 		//判別
-		String sample = words.get(0);	//wordsの1番目(=W)をsampleに代入
+		String sample	= words.get(0);		//wordsの1番目(=W)をsampleに代入
+		String reg		= "<" + sample + ">";		//正規表現
+		Pattern p = Pattern.compile(reg);
+		Matcher m;
 		for(String s : words){
-			if(sample.equals(s)){		//sampleと一致した回数をカウント
+			m = p.matcher(s);
+			if(m.find()){					//sampleと一致した回数をカウント
 				count++;
 			}
 		}
-		System.out.println(count-1);	//1番目(=W)も一致してしまうので1引く
+		System.out.println(count-1);		//1番目(=W)も一致してしまうので1引く
+		//test
+		for(String s : words){
+			System.out.println(s);
+		}
 	}
 
 	public static void main(String[] args){
