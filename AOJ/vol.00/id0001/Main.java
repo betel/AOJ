@@ -11,11 +11,12 @@ public class Main {
 		for(int i=0; i<h.length; i++){
 			h[i] = sc.nextInt();
 		}
+		sc.close();
 		//1st
 		int max1 = h[0];
 		for(int i=0; i<h.length; i++){
 			if(h[i]>max1){
-				max1 = h[i];	
+				max1 = h[i];
 			}
 		}
 		//2nd

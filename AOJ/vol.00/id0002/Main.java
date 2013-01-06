@@ -13,12 +13,11 @@ public class Main {
 			int k = 0;
 			while(c!=0){
 				c /= 10;
-				k++;	
+				k++;
 			}
 			System.out.println(k);
 		}
-		
-		
+		sc.close();
 	}
 
 }
