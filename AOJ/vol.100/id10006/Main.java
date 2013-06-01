@@ -11,6 +11,7 @@ public class Main {
 			System.out.println("Case " + i + ": " + x);
 			i++;
 		}
+		sc.close();
 	}
 
 }

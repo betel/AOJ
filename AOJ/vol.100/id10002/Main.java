@@ -7,6 +7,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
 		int b = sc.nextInt();
+		sc.close();
 		
 		int rec = a*b;
 		int round = a*2 + b*2;

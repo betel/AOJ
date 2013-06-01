@@ -11,6 +11,7 @@ public class Main {
 		n[0] = sc.nextInt();
 		n[1] = sc.nextInt();
 		n[2] = sc.nextInt();
+		sc.close();
 		int min = n[0];
 		for(int i=0; i<m.length; i++){
 			for(int j=0; j<max; j++){
