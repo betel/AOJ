@@ -5,22 +5,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-	public static void main(String[] args){
-		String[]	s	= new String[2];
-		int a=0,b=0;
-		
+	public static void main(String[] args){		
+		String str = null;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
-			s = br.readLine().split(" ");
-			a = Integer.parseInt(s[0]);
-			b = Integer.parseInt(s[1]);
-		} catch (NumberFormatException e){
-			e.printStackTrace();
+			str = br.readLine();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-
-		System.out.print((int)a/b + " " + a%b + " " + (float)a/b);
+		String[] s = str.split(" ");
+		double a = Double.parseDouble(s[0]);
+		double b = Double.parseDouble(s[1]);
+		int d = (int)(a/b);
+		int r = (int) (a%b);
+		double f = a/b;
+		System.out.printf("%d %d %.6f",d,r,f);
 	}
 }

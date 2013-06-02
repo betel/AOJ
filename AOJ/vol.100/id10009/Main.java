@@ -1,7 +1,7 @@
 package id10009;
 
 /*
- * doubleで計算しておいて正規表現で切り取る感じ
+ * doubleで計算しておいて書式付き出力で切り取る感じ
  */
 
 import java.io.BufferedReader;
