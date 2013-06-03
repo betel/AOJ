@@ -1,16 +1,15 @@
 package id10017;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String[] args) {
 		new Main().doIt();
 	}
-	void doIt() throws FileNotFoundException{
-		BufferedReader br = new BufferedReader(new FileReader("sampleData/id10017.txt"));
+	void doIt() {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while(true){
 			try {
 				String[] str = br.readLine().split(" ");
@@ -18,12 +17,23 @@ public class Main {
 				int x = Integer.parseInt(str[1]);
 				if(n==0&&x==0) break;
 				
+				System.out.println(ways(n, x));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 	}
-	void ways(int n, int x){
-		
+	int ways(int n, int x){
+		int count = 0;
+		for(int i=1; i<=n; i++){
+			for(int j=1; j<=n; j++){
+				for(int k=1; k<=n; k++){
+					if(((i+j+k)==x)&&(i<j&&j<k)){
+						count++;
+					}
+				}
+			}
+		}
+		return count;
 	}
 }
